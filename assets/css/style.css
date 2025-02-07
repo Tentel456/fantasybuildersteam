@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -343,58 +342,58 @@ body {
     display: inline-block;
 }
 
-/* Tablet (768px to 1024px) */
-@media screen and (max-width: 1024px) {
+/* Оптимизированные медиа-запросы */
+
+/* Large Desktop (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop (1024px to 1199px) */
+@media screen and (max-width: 1199px) {
+    :root {
+        --fz-big: 50px;
+    }
+    
+    .title {
+        font-size: 70px;
+    }
+    
+    .section-title {
+        font-size: 60px;
+    }
+    
+    .work__wrapp {
+        padding: 0 60px;
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media screen and (max-width: 1023px) {
     :root {
         --fz-big: 40px;
     }
     
     .content {
         padding: 0 40px;
+        margin: 100px 0;
     }
     
     .title {
-        font-size: 60px;
-    }
-    
-    .section-title {
         font-size: 50px;
     }
     
-    .header__img {
-        width: 60%;
-        right: 40px;
-    }
-    
-    .work__wrapp {
-        padding: 0 40px;
-    }
-    
-    .benefits__item {
-        width: calc(50% - 20px);
-    }
-}
-
-/* Mobile (up to 767px) */
-@media screen and (max-width: 767px) {
-    .content {
-        padding: 0 20px;
-        margin: 70px 0;
-    }
-    
-    .title {
-        font-size: 40px;
-    }
-    
-    .header__img {
-        width: 100%;
-        right: 0;
-        opacity: 0.3;
-    }
-    
     .header__marq-txt {
-        font-size: 24px;
-        padding-right: 35px;
+        font-size: 28px;
+        padding-right: 45px;
+    }
+    
+    .section-title {
+        font-size: 45px;
+        margin-bottom: 40px;
     }
     
     .about__wrapp {
@@ -408,25 +407,147 @@ body {
     }
     
     .about__img {
-        height: 50vh;
+        height: 60vh;
         margin-bottom: 40px;
     }
     
     .benefits__item {
+        width: calc(50% - 20px);
+    }
+    
+    .work__item {
+        width: calc(50% - 30px);
+        height: 70vh;
+    }
+}
+
+/* Mobile Large (425px to 767px) */
+@media screen and (max-width: 767px) {
+    .content {
+        padding: 0 20px;
+        margin: 70px 0;
+    }
+    
+    .title {
+        font-size: 36px;
+    }
+    
+    .header__marq-txt {
+        font-size: 20px;
+        padding-right: 30px;
+    }
+    
+    .header__marq-star {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .about__p {
+        font-size: 16px;
+    }
+    
+    .benefits__item {
         width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .benefits__num {
+        font-size: 40px;
     }
     
     .work__item {
         width: 100%;
-        height: 60vh;
+        height: 50vh;
+        margin-bottom: 40px;
     }
     
     .serv__item-txt {
-        font-size: 30px;
+        font-size: 24px;
     }
     
     .footer__div {
-        font-size: 40px;
-        letter-spacing: 8px;
+        font-size: 32px;
+        letter-spacing: 5px;
+    }
+}
+
+/* Mobile Small (320px to 424px) */
+@media screen and (max-width: 424px) {
+    .content {
+        padding: 0 15px;
+        margin: 50px 0;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+    
+    .header__marq-txt {
+        font-size: 16px;
+        padding-right: 25px;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .about__img {
+        height: 40vh;
+    }
+    
+    .benefits__num {
+        font-size: 32px;
+    }
+    
+    .work__item {
+        height: 40vh;
+    }
+    
+    .serv__item-txt {
+        font-size: 20px;
+    }
+    
+    .footer__div {
+        font-size: 26px;
+        letter-spacing: 3px;
+    }
+}
+
+/* Оптимизация для устройств с высоким DPI */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+    .header__img img,
+    .about__img img,
+    .work__item-img img {
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        will-change: transform;
+    }
+}
+
+/* Оптимизация для устройств в портретной ориентации */
+@media screen and (orientation: portrait) {
+    .header {
+        height: 80vh;
+    }
+    
+    .header__img {
+        opacity: 0.4;
+    }
+}
+
+/* Оптимизация для устройств в ландшафтной ориентации */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .header {
+        height: 120vh;
+    }
+    
+    .work__item {
+        height: 90vh;
     }
 }
